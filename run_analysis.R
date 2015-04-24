@@ -60,7 +60,12 @@ names(extractedStats) <- var.names
 #View(var.names)
 
 #Step 5
+#now using "dplyr" easily creating table, which is needed
 MeansOfStats <- extractedStats %>% group_by(Activity, Subject) %>% summarise_each(funs(mean))
+
+#writing the table
+
+write.table(MeansOfStats, "Tidy_Data_Created_in_Step_5.txt", row.names=FALSE)
 
 
 
